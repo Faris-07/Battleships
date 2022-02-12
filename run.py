@@ -34,6 +34,19 @@ def place_ship(board):
                 if fit_ship_check(ship_length, row, column, orientation):
 
 
+def fit_ship_check(SHIP_LENGTHS, row, column, orientation):
+    if orientation == "H":
+        if column + SHIP_LENGTHS > 8:
+            return False
+        else:
+            return True
+    else:
+        if row + SHIP_LENGTHS > 8:
+            return False
+        else:
+            return True
+
+
 def create_ships(board):
     """
     Computer randomly generates 5 ships 
